@@ -21,7 +21,7 @@
       </button>
     </header>
 
-    <main>
+    <main id="homeMain">
       <section class="welcome">
         <div class="welcome-copy">
           <span class="eyebrow">أهلاً بيك في قهوتك</span>
@@ -63,6 +63,27 @@
         <button class="secondary-button" id="roomButton">إنشاء ترابيزة <span>＋</span></button>
       </section>
     </main>
+
+    <section id="dominoScreen" class="domino-screen" hidden aria-label="لعبة الدومينو">
+      <div class="game-topbar">
+        <button class="back-button" id="backHome">← الرئيسية</button>
+        <div><span class="eyebrow">ترابيزة القهوة</span><h2>دومينو كلاسيك</h2></div>
+        <button class="restart-button" id="restartDomino">لعبة جديدة ↻</button>
+      </div>
+      <div class="score-strip">
+        <div class="player-chip"><span class="player-avatar">إ</span><span><b>أنت</b><small id="humanCount">7 قطع</small></span></div>
+        <div class="turn-status" id="turnStatus">دورك</div>
+        <div class="player-chip opponent"><span><b>الكمبيوتر</b><small id="cpuCount">7 قطع</small></span><span class="player-avatar">♟</span></div>
+      </div>
+      <div class="domino-table">
+        <div class="table-caption">اسحب القطعة المناسبة وحطّها على أحد الطرفين</div>
+        <div class="chain-ends"><span id="leftEnd">—</span><span id="chainCount">0 قطعة على الترابيزة</span><span id="rightEnd">—</span></div>
+        <div id="dominoChain" class="domino-chain"><div class="empty-table">ابدأ أول نقلة بقطعة من إيدك</div></div>
+        <div class="table-actions"><button id="drawTile" class="secondary-button">اسحب قطعة</button><button id="passTurn" class="outline-button">عدّي الدور</button></div>
+        <p id="gameMessage" class="game-message" aria-live="polite">اختار أي قطعة عشان تبدأ.</p>
+      </div>
+      <div class="hand-area"><div class="hand-heading"><b>قطعك</b><small>اضغط على القطعة للعبها</small></div><div id="humanHand" class="human-hand"></div></div>
+    </section>
 
     <nav class="bottom-nav" aria-label="التنقل الرئيسي">
       <button class="nav-item active" data-tab="home"><span>⌂</span>الرئيسية</button>
