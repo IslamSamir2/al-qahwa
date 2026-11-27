@@ -175,6 +175,7 @@
   }));
   $("privateRoomButton").addEventListener("click",()=>showDialog("ترابيزة خاصة","إنشاء الغرف برمز دعوة واللعب أونلاين هيتضافوا مع ربط الخادم. دي حاليًا واجهة تجريبية."));
   $("quickPlay").addEventListener("click",()=>showDomino());
+  const heroStart = $("heroStart"); if(heroStart) heroStart.addEventListener("click",()=>showDomino());
   $("createRoomHome").addEventListener("click",showCafe);
   $("inviteFriends").addEventListener("click",()=>showDialog("اعزم أصحابك","دعوات الأصدقاء واللعب الجماعي أونلاين ضمن المرحلة التالية."));
   document.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
