@@ -145,21 +145,50 @@
     $("gameMessage").textContent="عدّيت دورك."; render(); setTimeout(cpuMove,650);
   }
 
+  function hideScreens() {
+    $("homeMain").hidden=true; $("cafeScreen").hidden=true; $("tablesScreen").hidden=true; $("dominoScreen").hidden=true;
+    document.querySelector(".bottom-nav").hidden=false;
+  }
+  function showHome() { hideScreens(); $("homeMain").hidden=false; setActive("home"); window.scrollTo({top:0,behavior:"smooth"}); }
+  function showCafe() { hideScreens(); $("cafeScreen").hidden=false; setActive("cafe"); window.scrollTo({top:0,behavior:"smooth"}); }
+  function showTables(seats=2) {
+    hideScreens(); $("tablesScreen").hidden=false;
+    $("tablesTitle").textContent=seats===4?"ترابيزات لأربعة لاعبين":"ترابيزات لشخصين";
+    document.querySelectorAll(".available-table").forEach((el,i)=>{el.querySelector(".seat-count").textContent=seats===4?["2/4","1/4","3/4"][i]:["1/2","0/2","2/2"][i];});
+    setActive("tables"); window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function setActive(tab) {
+    document.querySelectorAll(".nav-item").forEach(nav=>nav.classList.toggle("active",nav.dataset.tab===tab));
+  }
+  function showDialog(t,d) { title.textContent=t; description.textContent=d; dialog.showModal(); }
+  $("enterCafe").addEventListener("click",showCafe);
+  $("cafeBackHome").addEventListener("click",showHome);
+  $("tablesBackCafe").addEventListener("click",showCafe);
+  document.querySelectorAll(".table-option").forEach(btn=>btn.addEventListener("click",()=>showTables(Number(btn.dataset.seats))));
+  document.querySelectorAll(".available-table").forEach(btn=>btn.addEventListener("click",()=>{
+    showDialog("اختيار اللعبة","الترابيزة اتحددت كتجربة مبدئية. اختار دومينو كلاسيك للعب ضد الكمبيوتر، أو ارجع للقائمة.");
+  }));
+  $("privateRoomButton").addEventListener("click",()=>showDialog("ترابيزة خاصة","إنشاء الغرف برمز دعوة واللعب أونلاين هيتضافوا مع ربط الخادم. دي حاليًا واجهة تجريبية."));
+  $("quickPlay").addEventListener("click",()=>showDomino());
+  $("createRoomHome").addEventListener("click",showCafe);
+  $("inviteFriends").addEventListener("click",()=>showDialog("اعزم أصحابك","دعوات الأصدقاء واللعب الجماعي أونلاين ضمن المرحلة التالية."));
   document.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
     const game=button.dataset.game;
     if(game==="domino"){showDomino();return;}
-    const [name,text]=labels[game]; title.textContent=name; description.textContent=text; dialog.showModal();
+    const [name,text]=labels[game]; showDialog(name,text);
   }));
-  $("backHome").addEventListener("click",backHome);
+  $("backHome").addEventListener("click",showHome);
   $("restartDomino").addEventListener("click",newGame);
   $("closeDialog").addEventListener("click",()=>dialog.close());
   $("dialogAction").addEventListener("click",()=>dialog.close());
-  $("exploreButton").addEventListener("click",()=>$("games").scrollIntoView({behavior:"smooth"}));
-  $("roomButton").addEventListener("click",()=>{title.textContent="إنشاء ترابيزة";description.textContent="الغرف ودعوة أصحابك أونلاين هتكون في مرحلة اللعب الجماعي.";dialog.showModal();});
   document.querySelectorAll(".nav-item").forEach(item=>item.addEventListener("click",()=>{
-    document.querySelectorAll(".nav-item").forEach(nav=>nav.classList.remove("active"));item.classList.add("active");
-    if(item.dataset.tab!=="home"){title.textContent=item.textContent.trim();description.textContent="القسم ده لسه تحت التجهيز.";dialog.showModal();}
+    const tab=item.dataset.tab;
+    if(tab==="home") showHome();
+    else if(tab==="cafe") showCafe();
+    else if(tab==="tables") showTables(2);
+    else if(tab==="friends") showDialog("الأصحاب","قائمة الأصدقاء والدعوات هتكون متاحة بعد إضافة الحسابات واللعب أونلاين.");
+    else showDialog("حسابك الشخصي","هنضيف الاسم والصورة والرصيد والإحصائيات في مرحلة الحسابات.");
   }));
-  $("profileButton").addEventListener("click",()=>{title.textContent="ملفك الشخصي";description.textContent="هنضيف الاسم والصورة والرصيد والإحصائيات في مرحلة قادمة.";dialog.showModal();});
+  $("profileButton").addEventListener("click",()=>showDialog("ملفك الشخصي","هنضيف الاسم والصورة والرصيد والإحصائيات في مرحلة الحسابات."));
   if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 })();
