@@ -92,3 +92,39 @@ html,body{min-height:100%;background:#071b16}body{color:#f4e7c9;background:linea
 .lobby-heading{margin:20px 2px 13px;align-items:end}.section-heading h2{color:#f4d995;font-size:26px;text-shadow:0 2px 5px #000}.section-note{color:#d2c4a5}.eyebrow{color:#e3b65e}.lounge-games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.game-card{min-height:158px;padding:10px 8px 13px;align-items:center;text-align:center;justify-content:flex-end;border:2px solid #c99a4c;border-radius:17px;background:linear-gradient(155deg,#164735f2,#08261ef5);box-shadow:inset 0 0 0 3px #e4c47722,0 8px 18px #0008;color:#f4e3bf;position:relative;overflow:hidden}.game-card:before{content:"";position:absolute;inset:5px;border:1px solid #dfba6c66;border-radius:11px;pointer-events:none}.game-card:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,#f4d27a19,transparent 65%);pointer-events:none}.game-card strong{position:relative;z-index:1;color:#f6d990;font-size:15px;margin:3px 0 0}.game-card small{position:relative;z-index:1;color:#d7c9a8;font-size:10px}.custom-art{height:86px;width:100%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}.custom-art svg{height:100%;width:100%;max-width:132px;filter:drop-shadow(0 5px 4px #0009)}.game-arrow{z-index:2;left:10px;bottom:8px;color:#f1c66e}
 .lobby-footer-actions{display:flex;gap:12px;margin:20px 0 8px}.lobby-footer-actions button{min-height:48px;border:1px solid #edcc7a;border-radius:12px;background:linear-gradient(145deg,#e6c477,#9d6728);color:#1b2d21;font:900 13px Cairo,Tahoma,sans-serif;box-shadow:0 6px 16px #0008;cursor:pointer}.lobby-footer-actions button:nth-child(2),.lobby-footer-actions button:nth-child(3){background:linear-gradient(145deg,#174c37,#09271e);color:#f2d58f}.bottom-nav{background:#061a15f5;border:1px solid #c99a4c;border-bottom:0;box-shadow:0 -8px 28px #0009;backdrop-filter:blur(10px)}.nav-item{color:#bcae8d}.nav-item.active{color:#f2cd78}
 @media(min-width:800px){.lobby-welcome{min-height:310px}.game-card{min-height:190px}.custom-art{height:110px}}@media(max-width:650px){.app-shell{padding:0 10px 100px}.topbar-lounge{height:72px;gap:6px}.brand-wood{padding:5px 7px}.brand-wood .brand-mark{font-size:19px}.brand-wood strong{font-size:17px}.brand-wood small{font-size:8px}.profile-card{gap:4px}.profile-avatar{width:32px;height:32px}.profile-info b{font-size:9px}.profile-info small,.profile-info i{font-size:7px}.header-tools{gap:4px}.coin-pill{font-size:9px;padding:5px}.settings-button,.menu-button{width:32px;height:32px;font-size:15px}.lobby-welcome{min-height:215px;padding:17px 5%;margin:12px 0 18px}.hero-copy{max-width:64%}.hero-copy h1{font-size:27px}.hero-copy p{font-size:11px;line-height:1.7}.hero-kicker{font-size:10px}.hero-cta{font-size:11px;padding:8px 13px}.hero-coffee{width:115px;height:125px;transform:scale(.78);margin-left:-10px}.lantern-one{left:2%;font-size:23px}.lantern-two{right:3%;font-size:22px}.lobby-heading{margin:14px 2px 10px}.section-heading h2{font-size:21px}.section-note{font-size:9px}.lounge-games{gap:7px}.game-card{min-height:135px;padding:7px 3px 10px;border-radius:14px}.custom-art{height:65px}.game-card strong{font-size:12px}.game-card small{font-size:9px}.game-arrow{font-size:15px;bottom:5px;left:7px}.lobby-footer-actions{gap:6px}.lobby-footer-actions button{font-size:10px;padding:8px 4px;min-height:42px}.bottom-nav{height:76px}.nav-item{font-size:10px}}
+
+/* V9 composition: illustrated cafe is the page, not a green card layout */
+body{background:#071a14 url("./assets/cafe-scene.svg") center top/cover fixed no-repeat!important}
+body:before{display:none!important}
+.app-shell{max-width:1180px;min-height:100vh;background:linear-gradient(180deg,#061a14a8 0%,#09271ed1 38%,#061a14eb 100%);padding:0 18px 112px}
+.topbar-lounge{background:linear-gradient(180deg,#06150fe8,#0a241bba);border-bottom:1px solid #c99b4d66}
+.brand-wood{background:linear-gradient(145deg,#9a6634,#563019 48%,#28170e);border:2px solid #e1b96b;border-radius:8px;box-shadow:inset 0 0 0 2px #f7d58a44,0 7px 20px #000a}
+.lobby-welcome{min-height:190px;margin:14px 0 18px;border:0;border-radius:0;background:linear-gradient(90deg,#061b15d9,#08271db3 55%,#061b1580)!important;box-shadow:none;outline:1px solid #d2a65d55;outline-offset:-7px}
+.lobby-welcome:before{inset:14px;border:1px solid #d8b36a55;border-radius:0}
+.hero-copy{max-width:62%}.hero-copy h1{font-size:clamp(24px,3.6vw,40px)}
+.hero-coffee{transform:scale(.82);filter:drop-shadow(0 10px 16px #000b)}
+.lobby-heading{padding:0 5px 8px;border-bottom:1px solid #d2a65d44}
+.lounge-games{gap:12px}
+.game-card{min-height:154px;border-radius:10px;border:2px solid #d3a355;background:linear-gradient(145deg,#164b35f2,#08271ef5);box-shadow:inset 0 0 0 2px #e9c47732,0 8px 16px #0009}
+.game-card:before{inset:5px;border:1px solid #e0bb6a75;border-radius:6px}
+.game-card:after{background:radial-gradient(ellipse at 50% 25%,#f6d78b24,transparent 66%)}
+.custom-art{height:82px;max-width:100%;padding:2px}
+.custom-art svg{max-width:145px}
+.game-card strong{font-size:14px;color:#f7dda0;text-shadow:0 2px 5px #000}
+.game-card small{font-size:10px;color:#e5d8ba}
+.lobby-footer-actions{justify-content:center}
+.lobby-footer-actions button{flex:1;max-width:260px}
+.bottom-nav{background:#061a14f5!important;border-top:2px solid #bd914b}
+@media(max-width:650px){
+ .app-shell{padding:0 10px 100px}
+ .topbar-lounge{height:70px}
+ .lobby-welcome{min-height:165px;margin:10px 0 15px;padding:12px 4%}
+ .hero-copy{max-width:66%}.hero-copy h1{font-size:23px}.hero-copy p{font-size:10px;margin-bottom:8px}
+ .hero-coffee{transform:scale(.62);margin-inline:-16px}
+ .lounge-games{gap:7px}
+ .game-card{min-height:128px;padding:6px 3px 9px}
+ .custom-art{height:62px}
+ .game-card strong{font-size:11px}.game-card small{font-size:8px}
+ .lobby-heading{margin:10px 2px 9px}.section-heading h2{font-size:20px}
+ .lobby-footer-actions{gap:6px;margin:14px 0 4px}.lobby-footer-actions button{font-size:10px}
+}
