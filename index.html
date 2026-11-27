@@ -11,25 +11,32 @@
 </head>
 <body>
 <div class="app-shell">
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="القهوة"><span class="brand-mark">ق</span><span><strong>القهوة</strong><small>لمة حلوة ولعب أحلى</small></span></a>
-    <div class="header-tools"><div class="coin-pill">✦ <b>1,250</b></div><button class="profile-button" id="profileButton" aria-label="الملف الشخصي"><span id="avatar">إ</span></button></div>
+  <header class="topbar topbar-lounge">
+    <button class="menu-button" id="menuButton" aria-label="القائمة">☰</button>
+    <div class="profile-card"><span class="profile-avatar">إ</span><span class="profile-info"><b>Islam Samir</b><small>★ 1250 نقطة</small><i><span></span> متصل الآن</i></span></div>
+    <a class="brand brand-wood" href="#" aria-label="القهوة"><span class="brand-mark">☕</span><span><strong>القهوة</strong><small>لعبة .. ومتعة .. مع القهوة</small></span></a>
+    <div class="header-tools"><div class="coin-pill">🪙 <b>12,450</b><button id="addCoins" aria-label="إضافة عملات">＋</button></div><button class="profile-button settings-button" id="profileButton" aria-label="الإعدادات">⚙</button></div>
   </header>
 
-  <main id="homeMain">
-    <section class="home-showcase">
-      <div class="home-copy"><span class="eyebrow">قهوة القهوة · فاتحين لحد الصبح</span><h1>ليلتك أحلى<br/><em>وسط أصحابك</em></h1><p>ادخل القهوة، اختار ترابيزتك، والعب دومينو وشطرنج وألعاب الكوتشينة.</p><button class="primary-button" id="enterCafe">خشّ القهوة <span>←</span></button><div class="home-social-proof"><span class="online-dot"></span><b>قعدتك مستنياك</b><small>ترابيزات فردي وجماعي</small></div></div>
-      <div class="home-cafe-art" aria-label="مشهد مرسوم لقهوة مصرية"><div class="art-wall"><div class="art-arch"><div class="art-window"><span>☾</span></div></div><div class="art-lamp lamp-a"></div><div class="art-lamp lamp-b"></div><div class="art-sign">قهوة <b>القهوة</b></div><div class="art-counter"></div><div class="art-table table-a"><i>☕</i><span></span></div><div class="art-table table-b"><i>♟</i><span></span></div><div class="art-stool stool-a"></div><div class="art-stool stool-b"></div></div><span class="art-caption">أهلاً بيك في قعدتك</span></div>
+  <main id="homeMain" class="lobby-home">
+    <section class="lobby-welcome">
+      <div class="welcome-sign"><span>☕</span><b>القهوة</b><small>لعبة .. ومتعة .. مع القهوة</small></div>
+      <div class="welcome-chalk">أهلاً بيك في قهوتنا <span>✦</span></div>
+      <p>اختار لعبتك وخلي القعدة تحلى</p>
     </section>
-
-    <section class="section-heading"><div><span class="eyebrow">اختار على مزاجك</span><h2>العب دلوقتي</h2></div><span class="section-note">ألعاب القهوة</span></section>
-    <section class="games-grid">
-      <button class="game-card domino-card" data-game="domino"><span class="game-icon">▰</span><span class="game-tag">الأكثر لعباً</span><strong>دومينو كلاسيك</strong><small>خلّي آخر قطعة معاك تكسبك</small><span class="game-arrow">←</span></button>
-      <button class="game-card fives-card" data-game="fives"><span class="game-icon">✣</span><strong>All Fives</strong><small>اجمع النقاط بمضاعفات الخمسة</small><span class="game-arrow">←</span></button>
-      <button class="game-card chess-card" data-game="chess"><span class="game-icon">♞</span><strong>شطرنج</strong><small>خطط لحركتك واكسب خصمك</small><span class="game-arrow">←</span></button>
-      <button class="game-card cards-card" data-game="cards"><span class="game-icon">♠</span><strong>ألعاب الكوتشينة</strong><small>لمة أصحابك ليها طعم تاني</small><span class="game-arrow">←</span></button>
+    <section class="section-heading lobby-heading"><div><span class="eyebrow">لمة أصحابك تبدأ من هنا</span><h2>اختار لعبتك</h2></div><span class="section-note">٩ ألعاب من قلب القهوة</span></section>
+    <section class="games-grid lounge-games">
+      <button class="game-card domino-card" data-game="domino"><span class="game-art domino-art"><i>⚁</i><i>⚅</i><i>⚃</i></span><strong>الدومينو</strong><small>دومينو كلاسيك</small><span class="game-arrow">‹</span></button>
+      <button class="game-card fives-card" data-game="fives"><span class="game-art fives-art"><i>⚄</i><b>5</b></span><strong>All Fives</strong><small>الدومينو ٥</small><span class="game-arrow">‹</span></button>
+      <button class="game-card chess-card" data-game="chess"><span class="game-art chess-art">♔ ♞ ♜</span><strong>الشطرنج</strong><small>خطط واكسب</small><span class="game-arrow">‹</span></button>
+      <button class="game-card cards-card" data-game="tarneeb"><span class="game-art cards-art"><i>♠</i><i>♥</i><i>♣</i></span><strong>طرنيب</strong><small>لمة الورق</small><span class="game-arrow">‹</span></button>
+      <button class="game-card cards-card" data-game="baloot"><span class="game-art cards-art"><i>♛</i><i>♠</i><i>♦</i></span><strong>بلوت</strong><small>تحدي الشركاء</small><span class="game-arrow">‹</span></button>
+      <button class="game-card backgammon-card" data-game="turk"><span class="game-art backgammon-art">🎲</span><strong>تركس</strong><small>اختار خطتك</small><span class="game-arrow">‹</span></button>
+      <button class="game-card tiles-card" data-game="istimish"><span class="game-art number-art"><i>1</i><i>2</i><i>3</i></span><strong>استميشن</strong><small>احسبها صح</small><span class="game-arrow">‹</span></button>
+      <button class="game-card cards-card" data-game="hand"><span class="game-art cards-art"><i>A</i><i>K</i><i>Q</i></span><strong>هاند</strong><small>ورق وتكتيك</small><span class="game-arrow">‹</span></button>
+      <button class="game-card cards-card" data-game="basra"><span class="game-art cards-art"><i>♦</i><i>♥</i><i>♠</i></span><strong>بصرة</strong><small>لمّ الورق</small><span class="game-arrow">‹</span></button>
     </section>
-    <section class="quick-actions"><button id="quickPlay">⚡ العب بسرعة</button><button id="createRoomHome">＋ اعمل ترابيزة</button><button id="inviteFriends">♧ اعزم أصحابك</button></section>
+    <section class="lobby-footer-actions"><button id="quickPlay">▶ ابدأ اللعب</button><button id="createRoomHome">＋ إنشاء ترابيزة</button><button id="inviteFriends">♧ أصدقائي</button></section>
   </main>
 
   <section id="cafeScreen" class="subscreen" hidden>
