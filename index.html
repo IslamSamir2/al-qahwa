@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123c32" />
+  <meta name="description" content="القهوة — مكانك للعب والتجمع مع أصحابك." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>القهوة | Al Qahwa</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="القهوة">
+        <span class="brand-mark">ق</span>
+        <span><strong>القهوة</strong><small>لمة حلوة ولعب أحلى</small></span>
+      </a>
+      <button class="profile-button" id="profileButton" aria-label="الملف الشخصي">
+        <span id="avatar">إ</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div class="welcome-copy">
+          <span class="eyebrow">أهلاً بيك في قهوتك</span>
+          <h1>القعدة تحلى<br /><em>باللمة</em></h1>
+          <p>اختار لعبتك، لمّ أصحابك، وابدأوا التحدي.</p>
+          <button class="primary-button" id="exploreButton">يلا نلعب <span>←</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="coffee-glow"></div>
+          <div class="coffee-cup"><span>ق</span></div>
+          <div class="steam steam-one"></div><div class="steam steam-two"></div>
+          <span class="decor decor-star">✦</span><span class="decor decor-dot">•</span>
+        </div>
+      </section>
+
+      <section class="section-heading" id="games">
+        <div><span class="eyebrow">اختار على مزاجك</span><h2>الألعاب</h2></div>
+        <span class="section-note">اختار لعبة وابدأ</span>
+      </section>
+
+      <section class="games-grid">
+        <button class="game-card domino-card" data-game="domino">
+          <span class="game-icon">▰</span><span class="game-tag">الأكثر لعباً</span>
+          <strong>دومينو كلاسيك</strong><small>خلّي آخر قطعة معاك تكسبك</small><span class="game-arrow">←</span>
+        </button>
+        <button class="game-card fives-card" data-game="fives">
+          <span class="game-icon">✣</span><strong>All Fives</strong><small>اجمع النقاط بمضاعفات الخمسة</small><span class="game-arrow">←</span>
+        </button>
+        <button class="game-card chess-card" data-game="chess">
+          <span class="game-icon">♞</span><strong>شطرنج</strong><small>خطط لحركتك واكسب خصمك</small><span class="game-arrow">←</span>
+        </button>
+        <button class="game-card cards-card" data-game="cards">
+          <span class="game-icon">♠</span><strong>ألعاب الكوتشينة</strong><small>لمة أصحابك ليها طعم تاني</small><span class="game-arrow">←</span>
+        </button>
+      </section>
+
+      <section class="room-banner">
+        <div><span class="eyebrow">العبوا سوا</span><h2>اعمل ترابيزة لأصحابك</h2><p>جهّز قعدتكم وابدأوا تحدي جديد.</p></div>
+        <button class="secondary-button" id="roomButton">إنشاء ترابيزة <span>＋</span></button>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="التنقل الرئيسي">
+      <button class="nav-item active" data-tab="home"><span>⌂</span>الرئيسية</button>
+      <button class="nav-item" data-tab="rooms"><span>▦</span>الترابيزات</button>
+      <button class="nav-item" data-tab="friends"><span>♧</span>الأصحاب</button>
+      <button class="nav-item" data-tab="profile"><span>◎</span>حسابي</button>
+    </nav>
+  </div>
+
+  <dialog id="gameDialog" class="app-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="إغلاق">×</button>
+    <span class="eyebrow">اختيار اللعبة</span>
+    <h2 id="dialogTitle">جاهز؟</h2>
+    <p id="dialogText">هنجهّزلك الترابيزة في الخطوة الجاية.</p>
+    <button class="primary-button" id="dialogAction">تمام</button>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
