@@ -1,0 +1,11 @@
+{
+  "name": "القهوة - Al Qahwa",
+  "short_name": "القهوة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f0e5",
+  "theme_color": "#123c32",
+  "description": "مكانك للعب والتجمع مع أصحابك"
+}
