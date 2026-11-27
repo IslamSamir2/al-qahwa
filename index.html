@@ -1,78 +1,21 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#123c32" />
-  <meta name="description" content="القهوة — قهوتك الافتراضية ولمّة أصحابك." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="lounge.css" />
-  <title>القهوة | Al Qahwa</title>
-</head>
-<body>
-<div class="app-shell">
-  <header class="topbar topbar-lounge">
-    <button class="menu-button" id="menuButton" aria-label="القائمة">☰</button>
-    <div class="profile-card"><span class="profile-avatar">إ</span><span class="profile-info"><b>Islam Samir</b><small>★ 1250 نقطة</small><i><span></span> متصل الآن</i></span></div>
-    <a class="brand brand-wood" href="#" aria-label="القهوة"><span class="brand-mark">☕</span><span><strong>القهوة</strong><small>لعبة .. ومتعة .. مع القهوة</small></span></a>
-    <div class="header-tools"><div class="coin-pill">🪙 <b>12,450</b><button id="addCoins" aria-label="إضافة عملات">＋</button></div><button class="profile-button settings-button" id="profileButton" aria-label="الإعدادات">⚙</button></div>
-  </header>
-
-  <main id="homeMain" class="lobby-home">
-    <section class="lobby-welcome qahwa-hero" aria-label="أهلاً بيك في قهوة القهوة">
-      <div class="hero-brand-plaque"><span class="plaque-cup">♨</span><strong>القهوة</strong><small>لعبة .. ومتعة .. مع القهوة</small></div>
-      <div class="hero-copy"><span class="hero-kicker">✦ أهلاً بيك في قهوتنا ✦</span><h1>القعدة تحلى باللمة</h1><p>اختار لعبتك وخلي القعدة تحلى</p><button class="hero-start" id="heroStart">ابدأ القعدة <span>←</span></button></div>
-    </section>
-    <section class="section-heading lobby-heading"><div><span class="eyebrow">لمة أصحابك تبدأ من هنا</span><h2>اختار لعبتك</h2></div><span class="section-note">٩ ألعاب من قلب القهوة</span></section>
-    <section class="games-grid lounge-games">
-      <button class="game-card domino-card" data-game="domino"><span class="game-art custom-art"><svg viewBox="0 0 120 76" aria-hidden="true"><g transform="translate(13 10) rotate(-12 25 28)"><rect width="39" height="55" rx="6" fill="#f4e8ca" stroke="#9b7740" stroke-width="3"/><path d="M4 27H35" stroke="#9b7740" stroke-width="2"/><g fill="#153b2c"><circle cx="12" cy="12" r="3"/><circle cx="27" cy="43" r="3"/><circle cx="12" cy="43" r="3"/></g></g><g transform="translate(49 4) rotate(7 25 28)"><rect width="39" height="55" rx="6" fill="#f4e8ca" stroke="#9b7740" stroke-width="3"/><path d="M4 27H35" stroke="#9b7740" stroke-width="2"/><g fill="#153b2c"><circle cx="12" cy="12" r="3"/><circle cx="27" cy="12" r="3"/><circle cx="12" cy="43" r="3"/><circle cx="27" cy="43" r="3"/><circle cx="19" cy="27" r="3"/></g></g></svg></span><strong>الدومينو</strong><small>دومينو كلاسيك</small><span class="game-arrow">‹</span></button>
-      <button class="game-card fives-card" data-game="fives"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><rect x="10" y="12" width="42" height="52" rx="6" fill="#f3e7cb" stroke="#a98243" stroke-width="3"/><g fill="#193e2e"><circle cx="21" cy="24" r="4"/><circle cx="41" cy="24" r="4"/><circle cx="31" cy="38" r="4"/><circle cx="21" cy="52" r="4"/><circle cx="41" cy="52" r="4"/></g><text x="83" y="58" font-size="58" font-weight="bold" fill="#e7bd66" stroke="#754b1e" stroke-width="2" text-anchor="middle">5</text></svg></span><strong>All Fives</strong><small>الدومينو ٥</small><span class="game-arrow">‹</span></button>
-      <button class="game-card chess-card" data-game="chess"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><path d="M12 15H108V68H12Z" fill="#183c2d" stroke="#d6ad60" stroke-width="3"/><path d="M36 15V68M60 15V68M84 15V68M12 41H108" stroke="#cba35b" stroke-width="2"/><g fill="#ead9b6" stroke="#5c4529" stroke-width="1.5"><path d="M29 12h14l-3 7 7 7-5 5H27l-5-5 7-7Z"/><path d="M72 9h16l-3 8 7 8-5 6H70l-5-6 7-8Z"/></g></svg></span><strong>الشطرنج</strong><small>خطط واكسب</small><span class="game-arrow">‹</span></button>
-      <button class="game-card cards-card" data-game="tarneeb"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g transform="translate(15 9) rotate(-12 25 28)"><rect width="43" height="58" rx="5" fill="#fff3df" stroke="#c7a56a" stroke-width="2"/><text x="21" y="39" text-anchor="middle" font-size="30" fill="#a63e35">♥</text></g><g transform="translate(45 5) rotate(8 25 28)"><rect width="43" height="58" rx="5" fill="#fff3df" stroke="#c7a56a" stroke-width="2"/><text x="21" y="39" text-anchor="middle" font-size="30" fill="#172b24">♠</text></g></svg></span><strong>طرنيب</strong><small>لمة الورق</small><span class="game-arrow">‹</span></button>
-      <button class="game-card cards-card" data-game="baloot"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g transform="translate(14 9) rotate(-10 25 28)"><rect width="43" height="58" rx="5" fill="#fff3df" stroke="#c7a56a" stroke-width="2"/><text x="21" y="39" text-anchor="middle" font-size="30" fill="#a63e35">♦</text></g><g transform="translate(46 5) rotate(9 25 28)"><rect width="43" height="58" rx="5" fill="#fff3df" stroke="#c7a56a" stroke-width="2"/><text x="21" y="39" text-anchor="middle" font-size="30" fill="#172b24">♣</text></g></svg></span><strong>بلوت</strong><small>تحدي الشركاء</small><span class="game-arrow">‹</span></button>
-      <button class="game-card backgammon-card" data-game="turk"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g fill="#d5a64f" stroke="#694522" stroke-width="3"><circle cx="35" cy="25" r="18"/><circle cx="78" cy="49" r="18"/></g><g fill="#173b2b"><circle cx="30" cy="20" r="3"/><circle cx="40" cy="30" r="3"/><circle cx="78" cy="40" r="3"/><circle cx="70" cy="49" r="3"/><circle cx="86" cy="49" r="3"/><circle cx="78" cy="58" r="3"/></g></svg></span><strong>تركس</strong><small>اختار خطتك</small><span class="game-arrow">‹</span></button>
-      <button class="game-card tiles-card" data-game="istimish"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g transform="translate(13 9) rotate(-8 20 28)"><rect width="34" height="54" rx="5" fill="#f3e8d0" stroke="#a78042" stroke-width="2"/><text x="17" y="37" text-anchor="middle" font-size="24" font-weight="bold" fill="#1d4935">7</text></g><g transform="translate(45 4)"><rect width="34" height="54" rx="5" fill="#f3e8d0" stroke="#a78042" stroke-width="2"/><text x="17" y="37" text-anchor="middle" font-size="24" font-weight="bold" fill="#1d4935">8</text></g><g transform="translate(77 9) rotate(8 20 28)"><rect width="34" height="54" rx="5" fill="#f3e8d0" stroke="#a78042" stroke-width="2"/><text x="17" y="37" text-anchor="middle" font-size="24" font-weight="bold" fill="#1d4935">9</text></g></svg></span><strong>استميشن</strong><small>احسبها صح</small><span class="game-arrow">‹</span></button>
-      <button class="game-card cards-card" data-game="hand"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g transform="translate(10 10) rotate(-13 20 28)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="37" text-anchor="middle" font-size="27" fill="#a53e35">A</text></g><g transform="translate(43 5)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="37" text-anchor="middle" font-size="27" fill="#183b2d">K</text></g><g transform="translate(76 10) rotate(13 20 28)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="37" text-anchor="middle" font-size="27" fill="#a53e35">Q</text></g></svg></span><strong>هاند</strong><small>ورق وتكتيك</small><span class="game-arrow">‹</span></button>
-      <button class="game-card cards-card" data-game="basra"><span class="game-art custom-art"><svg viewBox="0 0 120 76"><g transform="translate(10 9) rotate(-12 20 28)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="38" text-anchor="middle" font-size="29" fill="#a53e35">♦</text></g><g transform="translate(43 5)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="38" text-anchor="middle" font-size="29" fill="#183b2d">♠</text></g><g transform="translate(76 9) rotate(12 20 28)"><rect width="42" height="55" rx="5" fill="#fff2dd" stroke="#c4a26a" stroke-width="2"/><text x="21" y="38" text-anchor="middle" font-size="29" fill="#a53e35">♥</text></g></svg></span><strong>بصرة</strong><small>لمّ الورق</small><span class="game-arrow">‹</span></button>
-    </section>
-    <section class="lobby-footer-actions"><button id="quickPlay">▶ ابدأ اللعب</button><button id="createRoomHome">＋ إنشاء ترابيزة</button><button id="inviteFriends">♧ أصدقائي</button></section>
-  </main>
-
-  <section id="cafeScreen" class="subscreen" hidden>
-    <div class="subscreen-heading"><button class="back-button" id="cafeBackHome">← الرئيسية</button><div><span class="eyebrow">نورت القهوة</span><h2>اختار قعدتك</h2></div><span class="online-pill"><i></i> القهوة مفتوحة</span></div>
-    <div class="cafe-scene">
-      <div class="cafe-lantern">✧</div><div class="cafe-sign">قهوة <b>القهوة</b></div>
-      <div class="cafe-welcome"><span>أهلاً بيك يا صاحبي</span><h2>مكانك محفوظ وسط اللمة</h2><p>اختار ترابيزة وابدأ سهرتك</p></div>
-      <div class="cafe-floor"><div class="cafe-table-decor"><span>☕</span><b>ترابيزة ١</b></div><div class="cafe-table-decor"><span>♟</span><b>ترابيزة ٢</b></div><div class="cafe-table-decor"><span>▰</span><b>ترابيزة ٣</b></div></div>
-    </div>
-    <div class="section-heading"><div><span class="eyebrow">اختار مكانك</span><h2>الترابيزات</h2></div><span class="section-note">قعدات فردي وجماعي</span></div>
-    <div class="table-options">
-      <button class="table-option" data-seats="2"><span class="table-option-icon">♟ ♟</span><b>ترابيزة ثنائية</b><small>لاعبان · تحدي سريع</small><span>اختار الترابيزة ←</span></button>
-      <button class="table-option" data-seats="4"><span class="table-option-icon">♟ ♟<br/>♟ ♟</span><b>ترابيزة رباعية</b><small>٤ لاعبين · لمة أصحاب</small><span>اختار الترابيزة ←</span></button>
-    </div>
-  </section>
-
-  <section id="tablesScreen" class="subscreen" hidden>
-    <div class="subscreen-heading"><button class="back-button" id="tablesBackCafe">← القهوة</button><div><span class="eyebrow">جهّز قعدتك</span><h2 id="tablesTitle">ترابيزات لشخصين</h2></div></div>
-    <div class="table-list">
-      <button class="available-table" data-table="1"><span class="table-number">01</span><span><b>ترابيزة النيل</b><small>مفتوحة · في انتظارك</small></span><span class="seat-count">1/2</span></button>
-      <button class="available-table" data-table="2"><span class="table-number">02</span><span><b>ترابيزة المعلم</b><small>مفتوحة · في انتظارك</small></span><span class="seat-count">0/2</span></button>
-      <button class="available-table" data-table="3"><span class="table-number">03</span><span><b>ترابيزة اللمة</b><small>مفتوحة · في انتظاركم</small></span><span class="seat-count">2/4</span></button>
-    </div>
-    <div class="private-room"><div><b>عايز تلعب مع أصحابك بس؟</b><small>اعمل ترابيزة خاصة وشارك كود الدعوة.</small></div><button class="primary-button" id="privateRoomButton">ترابيزة خاصة ＋</button></div>
-  </section>
-
-  <section id="dominoScreen" class="domino-screen" hidden aria-label="لعبة الدومينو">
-    <div class="game-topbar"><button class="back-button" id="backHome">← القهوة</button><div><span class="eyebrow">ترابيزة القهوة</span><h2>دومينو كلاسيك</h2></div><button class="restart-button" id="restartDomino">لعبة جديدة ↻</button></div>
-    <div class="score-strip"><div class="player-chip"><span class="player-avatar">إ</span><span><b>أنت</b><small id="humanCount">7 قطع</small></span></div><div class="turn-status" id="turnStatus">دورك</div><div class="player-chip opponent"><span><b>الكمبيوتر</b><small id="cpuCount">7 قطع</small></span><span class="player-avatar">♟</span></div></div>
-    <div class="domino-table"><div class="table-caption">اسحب القطعة المناسبة وحطّها على أحد الطرفين</div><div class="chain-ends"><span id="leftEnd">—</span><span id="chainCount">0 قطعة على الترابيزة</span><span id="rightEnd">—</span></div><div id="dominoChain" class="domino-chain"><div class="empty-table">ابدأ أول نقلة بقطعة من إيدك</div></div><div class="table-actions"><button id="drawTile" class="secondary-button">اسحب قطعة</button><button id="passTurn" class="outline-button">عدّي الدور</button></div><p id="gameMessage" class="game-message" aria-live="polite">اختار أي قطعة عشان تبدأ.</p></div>
-    <div class="hand-area"><div class="hand-heading"><b>قطعك</b><small>اضغط على القطعة للعبها</small></div><div id="humanHand" class="human-hand"></div></div>
-  </section>
-
-  <nav class="bottom-nav" aria-label="التنقل الرئيسي"><button class="nav-item active" data-tab="home"><span>⌂</span>الرئيسية</button><button class="nav-item" data-tab="cafe"><span>☕</span>القهوة</button><button class="nav-item" data-tab="tables"><span>▦</span>الترابيزات</button><button class="nav-item" data-tab="friends"><span>♧</span>الأصحاب</button><button class="nav-item" data-tab="profile"><span>◎</span>حسابي</button></nav>
-</div>
-<dialog id="gameDialog" class="app-dialog"><button class="dialog-close" id="closeDialog" aria-label="إغلاق">×</button><span class="eyebrow">القهوة</span><h2 id="dialogTitle">جاهز؟</h2><p id="dialogText">هنجهّزلك الترابيزة في الخطوة الجاية.</p><button class="primary-button" id="dialogAction">تمام</button></dialog>
-<script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#092b20"><meta name="description" content="القهوة — لعبة ومتعة مع القهوة"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css?v=15"><title>القهوة | Al Qahwa</title></head><body><div class="app-shell">
+<header class="topbar"><button class="icon-btn" id="profileButton">⚙</button><div class="coins"><button id="addCoins">＋</button>🪙 12,450</div><div class="player"><span class="avatar">إ</span><span><b>Islam Samir</b><small>★ 1250 نقطة · <i>متصل الآن</i></small></span></div><button class="icon-btn" id="menuButton">☰</button></header>
+<main id="homeMain">
+<section class="hero"><div class="hero-shade"></div><div class="wood-sign"><span>☕</span><strong>القهوة</strong><small>لعبة .. ومتعة .. مع القهوة</small></div><div class="hero-words"><small>✦ أهلاً بيك في قهوتنا ✦</small><h1>القعدة تحلى باللمة</h1><p>اختار لعبتك وخلي القعدة تحلى</p><button id="heroStart">ابدأ القعدة ←</button></div></section>
+<div class="section-title"><div><small>لمة أصحابك تبدأ من هنا</small><h2>اختار لعبتك</h2></div><span>٩ ألعاب من قلب القهوة</span></div>
+<section class="games-grid">
+<button class="game-card" data-game="chess"><span class="art chess">♞ ♛<br>♜</span><b>الشطرنج</b><small>خطط واكسب</small></button>
+<button class="game-card" data-game="fives"><span class="art fives">⚄<strong>5</strong></span><b>All Fives</b><small>الدومينو ٥</small></button>
+<button class="game-card" data-game="domino"><span class="art domino"><i>⚁</i><i>⚅</i><i>⚃</i></span><b>الدومينو</b><small>دومينو كلاسيك</small></button>
+<button class="game-card" data-game="turk"><span class="art">🎲</span><b>تركس</b><small>اختار خطتك</small></button>
+<button class="game-card" data-game="tarneeb"><span class="art cards">♦ ♠ ♥</span><b>طرنيب</b><small>لمة الورق</small></button>
+<button class="game-card" data-game="baloot"><span class="art cards">♣ ♥ ♠</span><b>بلوت</b><small>تحدي الشركاء</small></button>
+<button class="game-card" data-game="istimish"><span class="art">🂡</span><b>استميشن</b><small>احسبها صح</small></button>
+<button class="game-card" data-game="hand"><span class="art cards">A K Q</span><b>هاند</b><small>ورق وتكتيك</small></button>
+<button class="game-card" data-game="basra"><span class="art cards">♥ ♦ ♠</span><b>بصرة</b><small>لمّ الورق</small></button>
+</section><div class="home-actions"><button id="quickPlay">▶ ابدأ اللعب</button><button id="createRoomHome">＋ إنشاء ترابيزة</button><button id="inviteFriends">♧ أصدقائي</button></div></main>
+<section id="cafeScreen" hidden><div class="subhead"><button id="cafeBackHome">← الرئيسية</button><h2>اختار قعدتك في القهوة</h2></div><div class="cafe-room"><div class="room-sign">☕ القهوة</div><h2>أهلاً بيك يا صاحبي</h2><p>مكانك محفوظ وسط اللمة</p><div class="tables-art"><span>☕<small>ترابيزة النيل</small></span><span>♟<small>ترابيزة المعلم</small></span><span>▤<small>ترابيزة اللمة</small></span></div></div><div class="section-title"><h2>اختار الترابيزة</h2></div><div class="table-options"><button class="table-option" data-seats="2">♟ ♟<b>ترابيزة ثنائية</b><small>لاعبان · تحدي سريع</small></button><button class="table-option" data-seats="4">♟ ♟ ♟ ♟<b>ترابيزة رباعية</b><small>٤ لاعبين · لمة أصحاب</small></button></div></section>
+<section id="tablesScreen" hidden><div class="subhead"><button id="tablesBackCafe">← القهوة</button><h2 id="tablesTitle">الترابيزات</h2></div><div class="table-list"><button class="available-table"><b>01 · ترابيزة النيل</b><small>مفتوحة · <span class="seat-count">1/2</span></small></button><button class="available-table"><b>02 · ترابيزة المعلم</b><small>مفتوحة · <span class="seat-count">0/2</span></small></button><button class="available-table"><b>03 · ترابيزة اللمة</b><small>مفتوحة · <span class="seat-count">2/4</span></small></button></div><button id="privateRoomButton" class="gold-button">ترابيزة خاصة ＋</button></section>
+<section id="dominoScreen" hidden><div class="subhead"><button id="backHome">← القهوة</button><h2>دومينو كلاسيك</h2><button id="restartDomino">لعبة جديدة ↻</button></div><div class="score-strip"><span>أنت <b id="humanCount">7 قطع</b></span><b id="turnStatus">دورك</b><span>الكمبيوتر <b id="cpuCount">7 قطع</b></span></div><div class="domino-table"><p>ترابيزة القهوة · العب من طرفي السلسلة</p><div class="ends"><span id="leftEnd">—</span><span id="chainCount">0 قطعة على الترابيزة</span><span id="rightEnd">—</span></div><div id="dominoChain" class="domino-chain"><span>ابدأ أول نقلة</span></div><div class="table-actions"><button id="drawTile">اسحب قطعة</button><button id="passTurn">عدّي الدور</button></div><p id="gameMessage" aria-live="polite">اختار أي قطعة عشان تبدأ.</p></div><div class="hand-area"><b>قطعك</b><div id="humanHand" class="human-hand"></div></div></section>
+<nav class="bottom-nav"><button class="nav-item active" data-tab="home"><b>⌂</b>الرئيسية</button><button class="nav-item" data-tab="cafe"><b>☕</b>القهوة</button><button class="nav-item" data-tab="tables"><b>▦</b>الترابيزات</button><button class="nav-item" data-tab="friends"><b>♧</b>الأصحاب</button><button class="nav-item" data-tab="profile"><b>◎</b>حسابي</button></nav></div>
+<dialog id="gameDialog"><button id="closeDialog" class="close-dialog">×</button><h2 id="dialogTitle">القهوة</h2><p id="dialogText"></p><button id="dialogAction" class="gold-button">تمام</button></dialog><script src="app.js?v=15"></script></body></html>
