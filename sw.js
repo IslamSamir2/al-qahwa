@@ -1,4 +1,4 @@
-const CACHE_NAME = "al-qahwa-lounge-v9";
+const CACHE_NAME = "al-qahwa-cafe-v11";
 const ASSETS = ["./", "./index.html", "./styles.css", "./lounge.css", "./assets/cafe-scene.svg", "./assets/cafe-interior.jpg", "./app.js", "./manifest.webmanifest"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
