@@ -1,48 +1,66 @@
-/* AL QAHWA — immersive mobile lounge redesign */
-:root{--q-green:#06291f;--q-green2:#0b4935;--q-gold:#d8ad62;--q-cream:#f3e5c2}
+/* Al Qahwa — rebuilt immersive lounge, visual scene uses the repository's original illustrated cafe asset */
+:root{--gold:#e0b96f;--gold2:#a87537;--cream:#f7e8c6;--green:#073a2b;--green2:#0b5039;--ink:#041b14}
 *{box-sizing:border-box}
-html{min-height:100%;background:#061a13}
-body{margin:0;min-height:100vh;color:var(--q-cream);font-family:Tahoma,Arial,sans-serif;background:#061a13 url("./assets/cafe-interior.jpg") center center/cover fixed no-repeat!important;position:relative}
-body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,17,12,.48),rgba(3,24,17,.58) 35%,rgba(3,20,14,.88) 100%),radial-gradient(ellipse at 50% 35%,transparent 0,rgba(0,0,0,.35) 90%)}
-.app-shell{position:relative;z-index:1;max-width:100%;min-height:100vh;margin:0 auto;padding:0 18px 108px;background:linear-gradient(180deg,rgba(2,22,16,.22),rgba(3,25,18,.22) 55%,rgba(2,18,13,.82))}
-.topbar-lounge{height:78px;display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(226,187,111,.5);background:linear-gradient(90deg,rgba(2,25,18,.9),rgba(5,43,31,.72),rgba(2,25,18,.9))}
-.menu-button,.profile-button{width:42px;height:42px;border:1px solid var(--q-gold);border-radius:13px;background:linear-gradient(145deg,#0b4935,#041b14);color:#f0cf83;font-size:21px;box-shadow:0 3px 10px #0008}
-.profile-card{display:flex;align-items:center;gap:8px;margin-inline-end:auto;order:1;padding:4px 8px;border:1px solid #c69a53;border-radius:28px;background:#061d16c9}
-.profile-avatar{width:38px;height:38px;border:2px solid #e4c477;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#e8ce8c,#8d672f);color:#142b20;font-weight:bold}
-.profile-info b,.profile-info small,.profile-info i{display:block}.profile-info b{font-size:11px}.profile-info small{font-size:10px;color:#edc66f}.profile-info i{font-size:9px;font-style:normal;color:#a9d5ae}
-.header-tools{order:0;display:flex;align-items:center;gap:7px}
-.coin-pill{height:42px;display:flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid var(--q-gold);border-radius:24px;background:#082b20;color:#f4d58c;font-size:11px}
-.coin-pill button{width:30px;height:30px;border:0;border-radius:50%;background:#dfb867;color:#183526;font-size:22px}
-.brand-wood{order:2;display:none}
-.lobby-home{padding-top:10px}
-.qahwa-hero{position:relative;min-height:340px;margin:10px 0 22px;overflow:hidden;border:1px solid #d5a956;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;text-align:center;background:linear-gradient(180deg,rgba(3,22,15,.22),rgba(3,20,14,.5)),url("./assets/cafe-interior.jpg") center 52%/cover no-repeat;box-shadow:0 14px 32px #000b,inset 0 0 0 5px rgba(238,195,105,.18)}
-.qahwa-hero:before{content:"";position:absolute;inset:9px;border:1px solid rgba(246,211,137,.72);border-radius:17px;pointer-events:none}
-.qahwa-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,19,13,.22),transparent 45%,rgba(3,19,13,.22));pointer-events:none}
-.hero-brand-plaque{z-index:1;min-width:250px;padding:12px 30px 13px;display:grid;justify-items:center;border:4px ridge #dcb567;border-radius:16px;background:linear-gradient(145deg,#88552d,#321c10 58%,#70421f);box-shadow:0 8px 22px #000b,inset 0 0 0 2px #f7df9a55;color:#ffe4a1}
-.plaque-cup{font-size:32px;line-height:1.15;filter:drop-shadow(0 3px 3px #0009)}
-.hero-brand-plaque strong{font-size:42px;line-height:1.25;text-shadow:0 3px 4px #160b05}
-.hero-brand-plaque small{font-size:12px;color:#ead4a8}
-.hero-copy{z-index:1;padding:0 12px;text-shadow:0 2px 5px #000}
-.hero-kicker{color:#f1ca72;font-size:18px;font-weight:bold}
-.hero-copy h1{margin:5px 0;color:#ffe2a0;font-size:30px}
-.hero-copy p{margin:0;color:#f3e7cf;font-size:15px}
-.lobby-heading{display:flex;align-items:end;justify-content:space-between;margin:22px 3px 14px;text-shadow:0 2px 5px #000}
-.section-heading .eyebrow{font-size:13px;color:#e4bd6b;font-weight:bold}
-.section-heading h2{margin:4px 0 0;font-size:28px;color:#ffe1a0}
-.section-note{font-size:12px;color:#e5d9c0}
-.lounge-games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.game-card{position:relative;min-width:0;min-height:174px;padding:12px 7px 11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;overflow:hidden;border:2px solid #d5a653;border-radius:21px;background:linear-gradient(145deg,rgba(10,82,57,.96),rgba(3,35,25,.98));color:#f8e9c6;box-shadow:inset 0 0 0 3px rgba(248,218,151,.13),0 8px 18px #000a}
-.game-card:before{content:"";position:absolute;inset:5px;border:1px solid rgba(238,202,128,.55);border-radius:15px;pointer-events:none}
-.game-art{position:relative;z-index:1;width:100%;height:94px;display:grid;place-items:center;border:1px solid rgba(238,202,128,.32);border-radius:14px;background:linear-gradient(145deg,rgba(3,35,25,.75),rgba(20,67,47,.42));box-shadow:inset 0 0 15px #0007}
-.custom-art svg{width:92%;max-width:145px;height:85px;overflow:visible;filter:drop-shadow(0 5px 5px #000a)}
-.game-card strong{position:relative;z-index:1;font-size:16px;color:#ffe2a0;text-shadow:0 2px 3px #000}
-.game-card small{position:relative;z-index:1;font-size:11px;color:#d6d1bd}
-.game-arrow{position:absolute;z-index:1;bottom:17px;left:10px;color:#e7bd67;font-size:21px}
-.lobby-footer-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 10px}
-.lobby-footer-actions button{min-height:50px;border:1px solid #d4a65b;border-radius:14px;background:linear-gradient(145deg,#93602e,#4b2b17);color:#ffe4a1;font-weight:bold;box-shadow:0 5px 12px #0008}
-.bottom-nav{position:fixed;z-index:5;left:0;right:0;bottom:0;max-width:100%;min-height:78px;display:flex;justify-content:space-around;align-items:center;padding:7px 5px max(8px,env(safe-area-inset-bottom));border:1px solid #c99b50;border-bottom:0;border-radius:22px 22px 0 0;background:rgba(3,27,20,.97);box-shadow:0 -7px 25px #0008;backdrop-filter:blur(12px)}
+html,body{margin:0;min-height:100%;background:#061b14;color:var(--cream);font-family:Tahoma,Arial,sans-serif}
+body{position:relative;background:#071b14 url("./assets/cafe-scene.svg") center top/cover fixed no-repeat}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(2,15,11,.52),rgba(2,20,14,.32) 36%,rgba(2,17,12,.83) 100%)}
+.app-shell{position:relative;z-index:1;max-width:1120px;min-height:100vh;margin:auto;padding:0 22px 110px;background:linear-gradient(180deg,rgba(3,24,17,.16),rgba(3,23,16,.22) 42%,rgba(2,17,12,.68))}
+.topbar-lounge{height:82px;display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #d6ae6970;background:linear-gradient(90deg,#031c15e8,#0a3b2bbd,#031c15e8);box-shadow:0 7px 22px #0005}
+.menu-button,.profile-button{width:44px;height:44px;border:1px solid var(--gold);border-radius:14px;background:linear-gradient(145deg,#0d5039,#06261c);color:#f2d38e;font-size:22px;box-shadow:inset 0 0 0 2px #e9c87922,0 4px 10px #0008}
+.profile-card{display:flex;align-items:center;gap:8px;margin-inline-end:auto;padding:5px 11px;border:1px solid #c69a53;border-radius:30px;background:#061d16e8;box-shadow:0 4px 12px #0006}
+.profile-avatar{width:39px;height:39px;display:grid;place-items:center;border:2px solid #f0ce7e;border-radius:50%;background:radial-gradient(circle at 35% 25%,#f5df9e,#9a6b30 75%);color:#183425;font-weight:bold}
+.profile-info b,.profile-info small,.profile-info i{display:block}.profile-info b{font-size:12px}.profile-info small{font-size:10px;color:#f0ca77}.profile-info i{font-size:9px;font-style:normal;color:#9ed1a5}
+.header-tools{display:flex;align-items:center;gap:8px}
+.coin-pill{height:42px;display:flex;align-items:center;gap:7px;padding:4px 9px;border:1px solid var(--gold);border-radius:25px;background:#082a1f;color:#f4d78e;font-size:12px}
+.coin-pill button{width:30px;height:30px;border:0;border-radius:50%;background:linear-gradient(145deg,#f3d58d,#b77c36);color:#193c2a;font-size:22px}
+.brand-wood{display:none}
+.lobby-home{padding-top:14px}
+.qahwa-hero{position:relative;isolation:isolate;min-height:330px;margin:0 0 26px;overflow:hidden;border:1px solid #d8b16b;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;text-align:center;background:linear-gradient(180deg,#04190f40,#04190f78),url("./assets/cafe-scene.svg") center 52%/cover no-repeat;box-shadow:0 15px 34px #000a,inset 0 0 0 5px #edc77820}
+.qahwa-hero:before{content:"";position:absolute;inset:9px;border:1px solid #f2d18b9c;border-radius:17px;pointer-events:none;z-index:-1}
+.hero-brand-plaque{min-width:260px;padding:11px 32px 13px;display:grid;justify-items:center;border:5px ridge #dfb767;border-radius:16px;background:linear-gradient(145deg,#86522a,#311b10 60%,#70421e);box-shadow:0 9px 24px #000c,inset 0 0 0 2px #ffe6a24a;color:#ffe5a7}
+.plaque-cup{font-size:31px;line-height:1.1;color:#f5d38a;text-shadow:0 2px 4px #000}
+.hero-brand-plaque strong{font-size:43px;line-height:1.25;text-shadow:0 3px 5px #160a04}
+.hero-brand-plaque small{font-size:12px;color:#f0d8aa}
+.hero-copy{max-width:95%;padding:0 12px;text-shadow:0 2px 6px #000}
+.hero-kicker{font-size:18px;font-weight:bold;color:#f1cd7c}
+.hero-copy h1{margin:5px 0;color:#ffe3a2;font-size:30px}
+.hero-copy p{margin:0;color:#f6e9d1;font-size:15px}
+.hero-start{margin-top:12px;padding:10px 23px;border:1px solid #f0d18a;border-radius:25px;background:linear-gradient(135deg,#e6c277,#a66e31);color:#1c3324;font-weight:bold;font-size:14px;box-shadow:0 4px 13px #0008}
+.hero-start span{padding-inline-start:10px}
+.lobby-heading{display:flex;align-items:end;justify-content:space-between;margin:22px 4px 14px;text-shadow:0 2px 6px #000}
+.section-heading .eyebrow{font-size:13px;color:#f0c76f;font-weight:bold}
+.section-heading h2{margin:4px 0 0;font-size:29px;color:#ffe3a3}
+.section-note{font-size:12px;color:#eee0c5}
+.lounge-games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.game-card{position:relative;min-width:0;min-height:184px;padding:12px 8px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;border:2px solid #d9ad5e;border-radius:21px;background:linear-gradient(145deg,#0a5139f5,#06291ff7 75%);color:var(--cream);box-shadow:inset 0 0 0 3px #ffe0a21c,0 8px 20px #000b;transition:transform .18s,filter .18s}
+.game-card:before{content:"";position:absolute;inset:5px;border:1px solid #edcc8490;border-radius:15px;pointer-events:none}
+.game-card:active{transform:scale(.97);filter:brightness(1.15)}
+.game-art{position:relative;z-index:1;width:100%;height:100px;display:grid;place-items:center;border:1px solid #d6b56b70;border-radius:14px;background:radial-gradient(ellipse at 50% 30%,#2a6a4a,#08291e 76%);box-shadow:inset 0 0 18px #0008}
+.custom-art svg{width:94%;max-width:150px;height:91px;overflow:visible;filter:drop-shadow(0 5px 5px #000b)}
+.game-card strong{position:relative;z-index:1;font-size:16px;color:#ffe3a2;text-shadow:0 2px 4px #000}
+.game-card small{position:relative;z-index:1;font-size:11px;color:#e4d9c3}
+.game-arrow{position:absolute;z-index:1;bottom:16px;left:10px;color:#f0c76f;font-size:22px}
+.lobby-footer-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:22px 0 12px}
+.lobby-footer-actions button{min-height:51px;border:1px solid #d9b16a;border-radius:15px;background:linear-gradient(145deg,#8c592b,#492a18);color:#ffe6aa;font-weight:bold;box-shadow:0 5px 14px #0008}
+.bottom-nav{position:fixed;z-index:10;left:0;right:0;bottom:0;min-height:80px;display:flex;justify-content:space-around;align-items:center;padding:7px 8px max(8px,env(safe-area-inset-bottom));border:1px solid #d0a55c;border-bottom:0;border-radius:22px 22px 0 0;background:rgba(3,29,21,.97);box-shadow:0 -7px 25px #0009;backdrop-filter:blur(12px)}
 .nav-item{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;color:#c8c2ae;font-size:11px}
-.nav-item span{font-size:24px;line-height:1.2}.nav-item.active{color:#f4d17c;text-shadow:0 0 9px #c88e3a}
-.subscreen,.domino-screen{position:relative;z-index:1}
-@media(min-width:760px){.app-shell{max-width:1120px;padding-inline:28px}.qahwa-hero{min-height:430px}.lounge-games{gap:18px}.game-card{min-height:205px}.game-art{height:120px}.custom-art svg{height:108px}}
-@media(max-width:600px){.app-shell{padding:0 12px 100px}.topbar-lounge{height:72px;gap:7px}.profile-card{padding:3px 6px}.profile-info b{font-size:10px}.profile-avatar{width:34px;height:34px}.coin-pill{height:38px;font-size:10px}.coin-pill button{width:27px;height:27px}.menu-button,.profile-button{width:38px;height:38px}.qahwa-hero{min-height:300px;margin:9px 0 18px;border-radius:21px}.hero-brand-plaque{min-width:220px;padding:10px 24px}.hero-brand-plaque strong{font-size:38px}.plaque-cup{font-size:29px}.hero-brand-plaque small{font-size:11px}.hero-kicker{font-size:16px}.hero-copy h1{font-size:26px}.hero-copy p{font-size:13px}.lobby-heading{margin:18px 3px 11px}.section-heading h2{font-size:24px}.section-note{font-size:10px}.lounge-games{gap:8px}.game-card{min-height:150px;padding:8px 4px 10px;border-radius:18px}.game-art{height:77px;border-radius:12px}.custom-art svg{height:70px}.game-card strong{font-size:13px}.game-card small{font-size:9px}.game-arrow{bottom:12px;left:7px;font-size:18px}.lobby-footer-actions{gap:6px;margin:15px 0}.lobby-footer-actions button{min-height:45px;font-size:10px}.bottom-nav{min-height:76px}.nav-item{font-size:10px}.nav-item span{font-size:22px}}
+.nav-item span{font-size:25px;line-height:1.2}.nav-item.active{color:#f4d17c;text-shadow:0 0 9px #d39c47}
+.subscreen,.domino-screen{position:relative;z-index:1;min-height:calc(100vh - 90px)}
+.subscreen-heading,.game-topbar{display:flex;align-items:center;gap:14px;padding:18px 4px}
+.subscreen-heading h2,.game-topbar h2{margin:3px 0;color:#ffe2a0}
+.back-button,.restart-button{padding:10px 14px;border:1px solid #d6ae68;border-radius:12px;background:#082a1feF;color:#ffe4a3}
+.cafe-scene{min-height:360px;padding:24px 18px;border:1px solid #d6ad66;border-radius:22px;background:linear-gradient(180deg,#03180b55,#03180b9c),url("./assets/cafe-scene.svg") center/cover;box-shadow:0 12px 25px #0009}
+.cafe-sign{display:inline-block;padding:8px 22px;border:4px ridge #d8b46d;border-radius:12px;background:linear-gradient(145deg,#88552c,#321b10);font-size:20px;color:#ffe5a6}
+.cafe-sign b{font-size:26px}.cafe-welcome{text-align:center;margin:50px 0 30px;text-shadow:0 2px 6px #000}.cafe-welcome h2{font-size:25px;color:#ffe0a0}.cafe-floor{display:flex;justify-content:space-around;gap:12px;flex-wrap:wrap}
+.cafe-table-decor{min-width:120px;padding:14px;border:2px solid #d7ad65;border-radius:50%;background:radial-gradient(ellipse,#146344,#05291e);text-align:center;box-shadow:0 8px 12px #0009}.cafe-table-decor span{display:block;font-size:27px}.cafe-table-decor b{font-size:12px}
+.table-options,.table-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:15px 0}
+.table-option,.available-table{padding:17px;border:1px solid #d2a65e;border-radius:16px;background:linear-gradient(145deg,#0c4a35,#06271d);color:#f8e7c5;text-align:right}
+.table-option-icon{display:block;font-size:25px;color:#e7c578}.table-option b,.table-option small,.table-option>span:last-child{display:block;margin-top:7px}.table-option>span:last-child{color:#edc779}
+.available-table{display:flex;align-items:center;gap:12px}.available-table>span:nth-child(2){flex:1}.available-table small{display:block;color:#cfc3a8}.table-number{font-size:23px;color:#e7c578}.seat-count{color:#f0cf7e}
+.private-room{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px;border:1px solid #c99a52;border-radius:16px;background:#061f17}.private-room small{display:block;color:#cfc3a8;margin-top:5px}.primary-button{padding:11px 16px;border:1px solid #f0d08a;border-radius:12px;background:linear-gradient(135deg,#e6c477,#a66d31);color:#193626;font-weight:bold}
+.score-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;border:1px solid #c79d5a;border-radius:16px;background:#06271edb}.player-chip{display:flex;align-items:center;gap:8px}.player-chip small{display:block;color:#d5c5a6}.turn-status{color:#f1cf7a;font-weight:bold}
+.domino-table{margin:15px 0;padding:16px;border:3px solid #c99a53;border-radius:22px;background:radial-gradient(ellipse,#176343,#06281d 70%);box-shadow:inset 0 0 0 4px #e9c77922,0 12px 24px #0009}.table-caption,.chain-ends{text-align:center;color:#f2dfbb}.chain-ends{display:flex;justify-content:space-between;margin:15px 0}.domino-chain{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;min-height:100px}.empty-table{color:#d9c7a5}.domino-tile{display:flex;align-items:center;width:48px;height:25px;padding:2px;border:1px solid #947343;border-radius:5px;background:#f3e6cb;box-shadow:0 2px 5px #0007}.tile-half{position:relative;display:block;width:50%;height:100%}.tile-divider{height:100%;border-inline-start:1px solid #876b40}.pips{position:absolute;inset:1px;display:block}.pip{position:absolute;width:4px;height:4px;border-radius:50%;background:#173c2c}.p0{top:0;left:0}.p2{top:0;right:0}.p3{top:50%;left:0;transform:translateY(-50%)}.p4{top:50%;left:50%;transform:translate(-50%,-50%)}.p5{top:50%;right:0;transform:translateY(-50%)}.p6{bottom:0;left:0}.p8{bottom:0;right:0}.table-actions{display:flex;justify-content:center;gap:10px;margin:15px}.table-actions button,.end-choice{padding:9px 14px;border:1px solid #d7b46d;border-radius:10px;background:#092e21;color:#f6dfaa}.game-message{text-align:center;color:#f3d58e}.hand-area{padding:15px;border:1px solid #c99a53;border-radius:16px;background:#041f17e8}.hand-heading{display:flex;justify-content:space-between;margin-bottom:10px}.hand-heading small{color:#cdbf9f}.human-hand{display:flex;gap:6px;overflow-x:auto;padding:5px}.hand-tile{border:0;background:transparent;padding:2px}.hand-tile .domino-tile{width:55px;height:31px}.hand-tile.selected .domino-tile{outline:3px solid #f2c96f}
+.app-dialog{position:fixed;z-index:30;max-width:calc(100% - 34px);border:1px solid #d5ad68;border-radius:20px;background:#09271e;color:#f7e8c6;padding:28px;box-shadow:0 20px 70px #000b}.app-dialog::backdrop{background:#000a}.app-dialog h2{color:#f4d58d}.dialog-close{position:absolute;top:9px;left:12px;border:0;background:none;color:#ffe2a0;font-size:25px}
+[hidden]{display:none!important}
+@media(max-width:620px){.app-shell{padding:0 12px 102px}.topbar-lounge{height:72px;gap:6px}.profile-card{padding:4px 6px;gap:5px}.profile-info b{font-size:10px}.profile-avatar{width:34px;height:34px}.coin-pill{height:38px;padding:3px 7px;font-size:10px}.coin-pill button{width:27px;height:27px}.menu-button,.profile-button{width:37px;height:37px}.qahwa-hero{min-height:300px;margin-bottom:20px;border-radius:20px}.hero-brand-plaque{min-width:218px;padding:9px 23px}.hero-brand-plaque strong{font-size:37px}.hero-copy h1{font-size:25px}.hero-kicker{font-size:15px}.hero-copy p{font-size:13px}.hero-start{padding:9px 19px;font-size:12px}.lobby-heading{margin:17px 3px 11px}.section-heading h2{font-size:24px}.section-note{font-size:10px}.lounge-games{gap:8px}.game-card{min-height:151px;padding:8px 4px 10px;border-radius:17px}.game-art{height:75px;border-radius:11px}.custom-art svg{height:68px}.game-card strong{font-size:13px}.game-card small{font-size:9px}.game-arrow{bottom:12px;left:6px;font-size:18px}.lobby-footer-actions{gap:6px;margin:16px 0}.lobby-footer-actions button{min-height:44px;padding:5px 3px;font-size:10px}.bottom-nav{min-height:75px}.nav-item{font-size:10px}.nav-item span{font-size:22px}.subscreen-heading,.game-topbar{gap:8px;padding:13px 0}.subscreen-heading h2,.game-topbar h2{font-size:19px}.table-options{gap:8px}.table-option{padding:12px}.private-room{align-items:flex-start;flex-direction:column}.cafe-scene{min-height:340px;padding:15px}.cafe-welcome{margin:40px 0 25px}.cafe-welcome h2{font-size:20px}.score-strip{padding:9px}.player-chip{font-size:11px}.table-caption{font-size:12px}.domino-table{padding:10px}.domino-chain{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.domino-tile{flex:0 0 43px}.hand-area{padding:10px}}
+@media(max-width:370px){.profile-info{display:none}.lounge-games{gap:6px}.game-card{min-height:140px}.game-art{height:68px}.game-card strong{font-size:12px}.game-card small{font-size:8px}}
