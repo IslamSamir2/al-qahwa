@@ -93,7 +93,12 @@
       const m=moves[0]; play("cpu",m.i,m.side); return;
     }
     if(state.boneyard.length) { state.cpu.push(state.boneyard.pop()); render(); setTimeout(cpuMove,500); }
-    else { state.turn="human"; $("gameMessage").textContent="الكمبيوتر عدّى دوره. دورك."; render(); }
+    else {
+      state.turn="human";
+      checkEnd();
+      if(!state.over) $("gameMessage").textContent="الكمبيوتر عدّى دوره. دورك.";
+      render();
+    }
   }
   function chooseTile(index) {
     if(state.over || state.turn!=="human") return;
@@ -114,7 +119,7 @@
     $("dominoChain").innerHTML=state.chain.length?state.chain.map(t=>tileMarkup(t)).join(""):'<div class="empty-table">ابدأ أول نقلة بقطعة من إيدك</div>';
     $("humanHand").innerHTML=state.human.map((t,i)=>`<button class="hand-tile ${state.selected===i?"selected":""}" data-index="${i}" aria-label="قطعة ${t.a} و${t.b}">${tileMarkup(t)}</button>`).join("");
     $("humanHand").querySelectorAll("[data-index]").forEach(btn=>btn.addEventListener("click",()=>chooseTile(Number(btn.dataset.index))));
-    $("drawTile").disabled=state.over||state.turn!=="human"||!state.boneyard.length;
+    $("drawTile").disabled=state.over||state.turn!=="human"||!state.boneyard.length||state.human.some(t=>legalSides(t).length);
     $("drawTile").textContent=state.boneyard.length?"اسحب قطعة ("+state.boneyard.length+")":"المخزن خلص";
     $("passTurn").disabled=state.over||state.turn!=="human"||state.human.some(t=>legalSides(t).length)||state.boneyard.length>0;
     $("drawTile").onclick=drawForHuman;
@@ -126,7 +131,7 @@
     }
   }
   function drawForHuman() {
-    if(state.over||state.turn!=="human"||!state.boneyard.length)return;
+    if(state.over||state.turn!=="human"||!state.boneyard.length||state.human.some(t=>legalSides(t).length))return;
     state.human.push(state.boneyard.pop());
     $("gameMessage").textContent="سحبت قطعة. العب لو تنفع، أو اسحب تاني.";
     render();
@@ -134,7 +139,10 @@
   }
   function passHuman() {
     if(state.over||state.turn!=="human"||state.human.some(t=>legalSides(t).length)||state.boneyard.length)return;
-    state.turn="cpu"; $("gameMessage").textContent="عدّيت دورك."; render(); setTimeout(cpuMove,650);
+    state.turn="cpu";
+    checkEnd();
+    if(state.over){render();return;}
+    $("gameMessage").textContent="عدّيت دورك."; render(); setTimeout(cpuMove,650);
   }
 
   document.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
