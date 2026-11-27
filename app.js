@@ -167,7 +167,6 @@
     document.querySelectorAll(".nav-item").forEach(nav=>nav.classList.toggle("active",nav.dataset.tab===tab));
   }
   function showDialog(t,d) { title.textContent=t; description.textContent=d; dialog.showModal(); }
-  $("enterCafe").addEventListener("click",showCafe);
   $("cafeBackHome").addEventListener("click",showHome);
   $("tablesBackCafe").addEventListener("click",showCafe);
   document.querySelectorAll(".table-option").forEach(btn=>btn.addEventListener("click",()=>showTables(Number(btn.dataset.seats))));
