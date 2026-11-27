@@ -128,3 +128,7 @@ body:before{display:none!important}
  .lobby-heading{margin:10px 2px 9px}.section-heading h2{font-size:20px}
  .lobby-footer-actions{gap:6px;margin:14px 0 4px}.lobby-footer-actions button{font-size:10px}
 }
+
+/* Standalone photo-realistic cafe environment; interface remains live HTML */
+body{background-image:linear-gradient(180deg,#03130e55,#03130e9c),url("./assets/cafe-interior.jpg")!important;background-size:cover!important;background-position:center center!important;background-attachment:fixed!important}
+.lobby-welcome{background-image:linear-gradient(90deg,#061b17d9,#09261d88 58%,#06171155),url("./assets/cafe-interior.jpg")!important;background-size:cover!important;background-position:center 48%!important}
